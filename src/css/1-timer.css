@@ -17,9 +17,16 @@ input {
   color: #2E2F42;
   border: 1px solid #808080;
   box-shadow: none;
+  cursor: auto;
 }
 input:hover {
   border: 1px solid #000000;
+}
+input:disabled {
+  color: #808080;
+  background-color: #FAFAFA;
+  border: 1px solid #808080;
+  cursor: not-allowed;
 }
 .timer {
   display: flex;

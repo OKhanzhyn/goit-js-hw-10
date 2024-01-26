@@ -11,7 +11,7 @@ function onSubmitForm(event) {
 event.preventDefault();
 
 const delay = delayInput.value;
-console.log(delay);
+
 const promise = new Promise((resolve, reject) => 
 {
   setTimeout(() => {
@@ -20,21 +20,19 @@ const promise = new Promise((resolve, reject) =>
    resolve(delay);}
   if (radioBtn === "rejected") {
     reject(delay);}
-    console.log(radioBtn);
-//   else {
-//    return}
+    
   }, delay);
   });
    promise.then((result) => {
     iziToast.success({
         title: 'OK',
-        message: `Fulfilled promise in ${delay}ms`,
+        message: `✅ Fulfilled promise in ${result}ms`,
       });
   })
    .catch((error) => {
     iziToast.error({
         title: '',
-        message: `Rejected promise in ${delay}ms`,
+        message: `❌ Rejected promise in ${error}ms`,
     });
 });
 };
